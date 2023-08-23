@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <conio.h>
+#include <windows.h>
+int main(){
+	HANDLE hConsole = GetStdHandle( STD_OUTPUT_HANDLE );
+	float grados, conversion;
+	int opcion;
+	SetConsoleTextAttribute(hConsole, 2);
+	printf("Conversion de grados de temperatura\n");
+	printf("(1) F%c --> C%c \n(2) C%c --> F%c", 167,167,167,167);
+	printf("\n Seleciona una opcion:");
+	scanf("%d",&opcion);
+// 9/5 = 1.8
+	if(opcion==1){
+		printf("Introduce los grados F%c: ",167);
+		scanf("%f", &grados);
+		conversion = (grados - 32) / 1.8;
+		printf("%.2f F%c = %.2f C%c",grados,167,conversion,167);
+	}else{
+		printf("Introduce los grados C%c:",167);
+		scanf("%f",&grados);
+		conversion = grados * 1.8 + 32;
+		printf("%.2f C%c = %.2f F%c",grados,167, conversion,167);
+	}
+	
+	getch();
+	return 0;
+}
